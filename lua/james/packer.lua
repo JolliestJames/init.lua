@@ -33,6 +33,8 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use('williamboman/mason.nvim')
+  use('williamboman/mason-lspconfig.nvim')
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
