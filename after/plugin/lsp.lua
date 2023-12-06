@@ -6,11 +6,26 @@ lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
 
-require('lspconfig').lua_ls.setup({})
+local lua_opts = lsp.nvim_lua_ls()
+require('lspconfig').lua_ls.setup(lua_opts)
 require('lspconfig').rust_analyzer.setup({})
-require('lspconfig').elixirls.setup({})
 
-lsp.nvim_lua_ls()
+-- Neovim doesn't support snippets out of the box, so we need to mutate the
+-- capabilities we send to the language server to let them know we want snippets.
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- require('lspconfig').elixirls.setup({
+-- 	cmd = { "/usr/local/Cellar/elixir-ls/0.17.10/libexec/language_server.sh" },
+-- 	-- on_attach = custom_attach, -- this may be required for extended functionalities of the LSP
+-- 	capabilities = capabilities,
+-- 	flags = {
+-- 		debounce_text_changes = 150,
+-- 	},
+-- 	elixirLS = {
+-- 		dialyzerEnabled = false,
+-- 		fetchDeps = false,
+-- 	};
+-- })
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
