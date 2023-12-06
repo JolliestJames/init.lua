@@ -8,7 +8,16 @@ end)
 
 local lua_opts = lsp.nvim_lua_ls()
 require('lspconfig').lua_ls.setup(lua_opts)
-require('lspconfig').rust_analyzer.setup({})
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  -- Replace the language servers listed here 
+  -- with the ones you want to install
+  ensure_installed = {'tsserver', 'rust_analyzer', 'elixirls', 'gopls', 'ruby_ls'},
+  handlers = {
+    lsp.default_setup,
+  },
+})
 
 -- Neovim doesn't support snippets out of the box, so we need to mutate the
 -- capabilities we send to the language server to let them know we want snippets.
