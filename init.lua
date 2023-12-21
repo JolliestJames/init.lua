@@ -46,7 +46,7 @@ require("lazy").setup({
 
 require('smart-splits').setup({
   -- add any options here
-  multiplexer_integration = 'WezTerm'
+  at_edge = 'split'
 })
 
 --local mux = require('smart-splits.mux').get()
