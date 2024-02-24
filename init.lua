@@ -27,6 +27,7 @@ require("lazy").setup({
   {'theprimeagen/harpoon'},
   {'mbbill/undotree'},
   {'tpope/vim-fugitive'},
+  {'rose-pine/neovim', name = 'rose-pine'},
   {'maxmx03/dracula.nvim',
    lazy = false, -- make sure we load this during startup if it is your main colorscheme
    priority = 1000, -- make sure to load this before all the other start plugins
