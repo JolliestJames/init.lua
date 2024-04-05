@@ -30,6 +30,18 @@ require("lazy").setup({
   {'rose-pine/neovim', name = 'rose-pine'},
   { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- If you are using Packer
+  { 'marko-cerovac/material.nvim', name = "material", priority = 1000 },
+  {
+    'maxmx03/solarized.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.o.background = 'dark' -- or 'light'
+
+      vim.cmd.colorscheme 'solarized'
+    end,
+  },
   {
     "neanias/everforest-nvim",
     version = false,

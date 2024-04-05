@@ -17,8 +17,8 @@ require('mason-lspconfig').setup({
       'tsserver',
       'rust_analyzer',
       'elixirls',
-      'gopls',
-      'ruby_ls',
+      --'gopls',
+      --'ruby_ls',
       'zls'
   },
   handlers = {

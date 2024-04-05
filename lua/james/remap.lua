@@ -46,3 +46,6 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+vim.keymap.set("n", "<leader>zb", ":!zig build<CR>");
+vim.keymap.set("n", "<leader>zr", ":!zig build run<CR>");
+
