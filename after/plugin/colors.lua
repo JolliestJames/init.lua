@@ -8,6 +8,6 @@ end
 
 --ColorMyPencils("tokyonight-moon")
 --ColorMyPencils("material-oceanic")
-ColorMyPencils("everforest")
 --ColorMyPencils("solarized")
+ColorMyPencils("everforest")
 
