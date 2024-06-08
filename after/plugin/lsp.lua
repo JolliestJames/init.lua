@@ -8,6 +8,14 @@ end)
 
 local lua_opts = lsp.nvim_lua_ls()
 require('lspconfig').lua_ls.setup(lua_opts)
+require('lspconfig').zls.setup({
+    cmd = { '/Users/jame/zig/zls' },
+    settings = {
+        zls = {
+            zig_exe_path = '/Users/jame/zig/0.13.0-dev.351+64ef45eb0/files/zig'
+        }
+    }
+})
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -17,7 +25,7 @@ require('mason-lspconfig').setup({
       'tsserver',
       'rust_analyzer',
       'elixirls',
-      --'gopls',
+      'gopls',
       --'ruby_ls',
       'zls'
   },
